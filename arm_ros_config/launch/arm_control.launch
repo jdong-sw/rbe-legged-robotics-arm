@@ -1,0 +1,15 @@
+<launch>
+    <!-- Load controller parameters -->
+    <rosparam file="$(find arm_ros_config)/config/arm_controllers.yaml" command="load"/>
+
+    <!-- Load controllers -->
+    <node name="controller_spawn" pkg="controller_manager" type="spawner" respawn="false"
+        output="screen" ns="/arm"
+        args="joint_state_controller joint1_position_controller joint2_position_controller joint3_position_controller"/>
+
+    <!-- Run joint state publishere -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+        respawn="false" output="screen">
+        <remap from="/joint_states" to="/arm/joint_states"/>
+    </node>
+</launch>

@@ -7,7 +7,7 @@
         output="screen" ns="/arm"
         args="joint_state_controller joint1_position_controller joint2_position_controller joint3_position_controller"/>
 
-    <!-- Run joint state publishere -->
+    <!-- Run joint state publisher -->
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
         respawn="false" output="screen">
         <remap from="/joint_states" to="/arm/joint_states"/>

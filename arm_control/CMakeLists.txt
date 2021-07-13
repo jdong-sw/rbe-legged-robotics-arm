@@ -159,6 +159,8 @@ add_executable(move_circle scripts/move_circle.cpp)
 ## same as for the library above
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(ik_solver ${PROJECT_NAME}_generate_messages_cpp)
+add_dependencies(joint_action_server ${PROJECT_NAME}_generate_messages_cpp)
+add_dependencies(pose_action_server ${PROJECT_NAME}_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
 # target_link_libraries(${PROJECT_NAME}_node

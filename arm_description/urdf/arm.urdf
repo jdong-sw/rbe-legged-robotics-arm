@@ -1,10 +1,10 @@
 <robot name="arm">
-    <!--link name="world" /-->
-    <!--joint name="base_joint" type="fixed">
-        <origin xyz="0 0 0" rpy="0 0 0 " />
+    <link name="world" />
+    <joint name="base_joint" type="fixed">
+        <origin xyz="0 0 1.5" rpy="0 -3.14 0 " />
         <parent link="world" />
         <child link="base" />
-    </joint-->
+    </joint>
     <link name="base">
         <visual>
             <geometry>
